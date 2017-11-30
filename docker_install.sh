@@ -20,3 +20,8 @@ sudo yum install -y docker-ce
 #Add user to Docker gorup
 
 sudo usermod -aG docker ec2-user
+
+#Start and Enable Docker
+
+sudo systemctl enable docker
+sudo systemctl start docker
