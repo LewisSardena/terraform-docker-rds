@@ -57,23 +57,12 @@ ingress {
   }
 }
 
-## AMI's
-
-data "aws_ami" "centos7_ami_useast1" {
-  most_recent       = true
-  owners            = ["self"]
-
-  filter {
-    name   = "name"
-    values = ["CentOS Linux 7 x86_64 HVM EBS*"]
-  }
-}
 
 ## Launch Configurations
 
 resource "aws_launch_configuration" "docker" {
   name          = "docker-node-lc"
-  image_id      = ""${data.aws_ami.centos7_ami_useast1.id}"
+  image_id      = "ami-bb9a6bc2"
   instance_type = "t2.micro"
   security_groups = ["${aws_security_group.docker_sg.id}"]
   associate_public_ip_address = true
