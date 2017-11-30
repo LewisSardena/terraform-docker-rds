@@ -2,21 +2,21 @@
 
 #Add utils
 
-yum install -y yum-utils \
+sudo yum install -y yum-utils \
 device-mapper-persistent-data \
 lvm2
 
 #Add Docker repo
 
-yum-config-manager \
+sudo yum-config-manager \
 --add-repo \
 https://download.docker.com/linux/centos/docker-ce.repo
 
 #Install Docker
 
-yum install -y docker-ce
+sudo yum install -y docker-ce
 
 
 #Add user to Docker gorup
 
-usermod -aG docker ec2-user
+sudo usermod -aG docker ec2-user
